@@ -28,10 +28,14 @@ function search (query) {
   return returns
 }
 
+function list () {
+  return fs.readdirSync('./media')
+}
+
 function returnFile (filename) {
   return fs.readFileSync('./media/' + filename, {encoding: 'base64'})
 }
 
 module.exports = {
-  reload, search, returnFile
+  reload, search, returnFile, list
 }
